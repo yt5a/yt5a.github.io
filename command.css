@@ -5,6 +5,7 @@
  }
  #titlepush img {
  opacity: 0.5;
+ transition: .5s;
 }
    #titlepush img:hover {
    opacity: 1;
