@@ -61,3 +61,19 @@
    top: 400px;
   left: 550px;
 }
+
+#storagepush {
+ }
+ #storagepush img {
+ opacity: 0.5;
+ transition: 1s;
+ position: absolute;
+  top: 200px;
+  left: 700px;
+}
+   #storagepush img:hover {
+   opacity: 1;
+   position: absolute;
+   top: 150px;
+  left: 700px;
+}
