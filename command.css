@@ -3,6 +3,6 @@
    top: 200px;
    left: 100px;
    &:hover {
-  opacity: 0.5;  
+   opacity: 0.5;  
    }
 }
