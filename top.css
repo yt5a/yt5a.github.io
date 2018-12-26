@@ -1,5 +1,33 @@
 @charset "UTF-8";
 
+header {
+    background-color: #333;
+    height: 10%;
+    width: 100%;
+}
+
+
+.scroll {
+position: absolute;
+top: 500px;
+left: 1000px;
+background-color: #ffffff
+}
+
+.timer {
+  /*background-color: #f0ffff*/
+  background:linear-gradient(to right, blue 0%, red 100%);
+  color: #ffffff
+  }
+
+  #title {
+   }
+   #title img {
+   position: absolute;
+    top: 15px;
+    left: 30px;
+  }
+
 #titlepush {
  }
  #titlepush img {

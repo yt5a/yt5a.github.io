@@ -14,18 +14,21 @@ body, html, main {
 }
 
 .cd-fixed-bg.cd-bg-1 {
-  background-color: #000000
+background-image: url("https://yt5a.github.io/images/aran.jpeg");
 }
 .cd-fixed-bg.cd-bg-2 {
-  background-color: #cdcdcd
+background-image: url("https://yt5a.github.io/images/images-1.jpg");
 }
 .cd-fixed-bg.cd-bg-3 {
-  background-color: #f0ffff
+background-image: url("https://yt5a.github.io/images/aran.jpeg");
 }
 .cd-fixed-bg.cd-bg-4 {
 
 }
+.cd-color-1{
+  background:linear-gradient(to bottom, black 90%, white 100%);
+}
 
 .cd-scrolling-bg {
-    min-height: 100%;
+    min-height: 80%;
 }

@@ -2,38 +2,137 @@
 <html lang="ja" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>
-      とっぷ　ぺえじ-
-    </title>
+    <title></title>
+    <link rel="stylesheet" href="top.css">
+    <link rel="stylesheet" href="CD.css">
   </head>
+  <body bgcolor=#000000>
 
-  <body bgcolor=#f0ffff>
-    <h3>
-    <img src="https://yt5a.github.io/images/test.jpg" alt="">
-    </h3>
-    <ul>
+    <header>
 
-     <h2>プロローグ</h2>
-     <i>
-      <p>ただいま、勉強中です。
-        </p>
-     </i>
-    </ul>
+    </header>
+    <!-- タイマー -->
+<div class="timer">
 
-    <ul>
-    <h2>授業</h2>
+      <span id="view_clock"></span>
 
-    <h2>
-      <a href="https://yt5a.github.io/study.html">勉強</a>
-    </h2>
+      <script type="text/javascript">
+      timerID = setInterval('clock()',500); //0.5秒毎にclock()を実行
 
-    <h2>
-      <a href="https://yt5a.github.io/fun.html">コンテンツ</a>
-    </h2>
+      function clock() {
+      	document.getElementById("view_clock").innerHTML = getNow();
+      }
 
-    <h2>
-      <a href="https://yt5a.github.io/contents.html">備忘録</a>
-    </h2>
+      function getNow() {
+      	var now = new Date();
+      	var year = now.getFullYear();
+      	var mon = now.getMonth()+1; //１を足す必要あり
+      	var day = now.getDate();
+      	var hour = now.getHours();
+      	var min = now.getMinutes();
+      	var sec = now.getSeconds();
 
+      	//出力
+      	var s = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒";
+      	return s;
+      }
+      </script>
+ </div>
+<!-- 背景 -->
+
+          <main>
+            <div class="cd-scrolling-bg cd-color-1">
+                <div class="cd-container">
+                    <p>
+                        コンテンツ
+                    </p>
+                </div>
+            </div>
+<!--
+        <div class="cd-fixed-bg cd-bg-1">
+            <h1>見出し</h1>
+        </div>
+
+
+        <div class="cd-fixed-bg cd-bg-2">
+            <h1>見出し</h1>
+        </div>
+
+        <div class="cd-scrolling-bg cd-color-2">
+            <div class="cd-container">
+                <p>
+                    コンテンツ
+                </p>
+            </div>
+        </div>
+        <div class="cd-fixed-bg cd-bg-3">
+            <h1>見出し</h1>
+        </div>
+
+        <div class="cd-scrolling-bg cd-color-1">
+            <div class="cd-container">
+                <p>
+                    コンテンツ
+                </p>
+            </div>
+        </div>
+    </main>
+-->
+<!-- 画像 -->
+<div id="title">
+  <a href="">
+  <img src="https://yt5a.github.io/images/senyou.png" width="190" height="57">
+  </a>
+</div>
+
+    <div id="titlepush">
+     <a href="https://yt5a.github.io/My page.html">
+     <img src="https://yt5a.github.io/images/push-title.png" alt="">
+     </a>
+    </div>
+
+    <div id="studypush">
+      <a href="https://yt5a.github.io/My page-study.html">
+      <img src="https://yt5a.github.io/images/push-study.png" alt="">
+      </a>
+    </div>
+
+    <div id="lessonpush">
+      <a href="https://yt5a.github.io/My page-lesson.html">
+      <img src="https://yt5a.github.io/images/push-lesson.png" alt="">
+      </a>
+    </div>
+
+      <div id="contentspush">
+        <a href="https://yt5a.github.io/My page-fun.html">
+        <img src="https://yt5a.github.io/images/push-contents.png" alt="">
+        </a>
+      </div>
+
+      <div id="storagepush">
+        <a href="https://yt5a.github.io/My page-contents.html">
+        <img src="https://yt5a.github.io/images/push-storage.png" alt="">
+        </a>
+      </div>
+
+<!-- 内部スクロール -->
+<!--
+    <div class="scroll">
+      <div style="width:200px;height:150px;overflow:auto;">
+        <font color=#000000>
+    　　  <p>更新内容１</p>
+    　　  <p>更新内容２</p>
+  　　    <p>更新内容３</p>
+  　　    <p>更新内容４</p>
+  　　    <p>更新内容５</p>
+    　　  <p>更新内容６</p>
+    　　  <p>更新内容７</p>
+    　　  <p>更新内容８</p>
+    　　  <p>更新内容９</p>
+    　　  <p>更新内容１０</p>
+       </font>
+      </div>
+    </div>
+ -->
   </body>
 </html>
