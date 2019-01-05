@@ -14,7 +14,10 @@ body, html, main {
 }
 
 .cd-fixed-bg.cd-bg-1 {
-background-image: url("https://yt5a.github.io/images/aran.jpeg");
+background-image: url("https://yt5a.github.io/images/本棚のコピー2.png");
+    min-height: 40%;
+    min-width:80%;
+    background-position: top top;
 }
 .cd-fixed-bg.cd-bg-2 {
 background-image: url("https://yt5a.github.io/images/images-1.jpg");
