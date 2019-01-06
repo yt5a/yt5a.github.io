@@ -117,9 +117,17 @@ background-color: #ffffff
     top: 0px;
     left: 10px;
 }
+
 .pop-contents {
     position: absolute;
       z-index: 10;
     top: 100px;
     left: 100px;
+}
+.pop-contents :hover {
+    position: absolute;
+    width: 416px;
+    height: 104px;
+    top: 0px;
+    left: 10px;
 }
