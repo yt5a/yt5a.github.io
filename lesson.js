@@ -1,9 +1,3 @@
-$(function(){
-  $('.single-item').slick({
-    accessibility: true,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    dots: true,
-    fade: true,
-  });
+$(document).ready(function(){
+  $("#sample").css("color","#d9534f");
 });
