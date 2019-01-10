@@ -142,7 +142,7 @@ background-color: #ffffff
     opacity: 0;
 }
 
-#sample input+#ff img{
+#sample input+#ff .a{
     opacity: 0;
     z-index: 20;
     transition: 0.5s;
@@ -152,7 +152,7 @@ background-color: #ffffff
     width: 40%;
     height: 100%;
 }
-#sample input:checked+#ff img{
+#sample input:checked+#ff .a{
     opacity: 1;
     z-index: 20;
     position: absolute;
@@ -177,17 +177,19 @@ background-color: #ffffff
     left: 0px;
 }
 
-#sample input+#ff h2{
+#sample input+#ff .b{
     opacity: 0;
     z-index: 20;
     transition: 0.5s;
     position: absolute;
+    height: 50px;
     top: 70px;
     left: -300px;
 }
-#sample input:checked+#ff h2{
+#sample input:checked+#ff .b{
     opacity: 1;
-    z-index: 20;
-    position: relative;
-    left: 250px;
+    z-index: 21;
+    position: absolute;
+    height: 50px;
+    left: 450px;
 }
