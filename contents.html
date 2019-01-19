@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title>備忘録</title>
     <link rel="stylesheet" href="contents.css">
+
+    <script type="text/javascript" src="contents.js"></script>
   </head>
 
   <style>
@@ -18,9 +20,23 @@
   </style>
 
   <body>
-  <img src="https://yt5a.github.io/images/book-check.png" width="400" height="100">
-  <img src="https://yt5a.github.io/images/game-check.png" width="400" height="100">
 
+    <div id="book">
+     <input type="image" src="https://yt5a.github.io/images/book-check.png"width="400"height="100" onclick="books()">
+    </div>
+
+    <div id="game">
+     <input type="image" src="https://yt5a.github.io/images/game-check.png"width="400"height="100" onclick="games()">
+    </div>
+
+    <div id="scroll">
+      <div style="width:300px;height:250px;overflow:auto;">
+        <font color=#000000>
+        <div id="lang"></div>
+       </font>
+      </div>
+    </div>
+<!--
            <h3>
               自己啓発本、論文、学書類
            </h3>
@@ -49,6 +65,7 @@
           <h3>
             フリーゲーム
           </h3>
+        -->
   </body>
 
 </html>
