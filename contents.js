@@ -7,7 +7,7 @@ function books(){
 
 function games(){
   var s = document.getElementById('lang');
-      s.innerHTML = '<a href="https://yt5a.github.io/sumahoge.html">ソーシャルゲーム</a>' + "<p>テレビゲーム</p>" + "<p>フリーゲーム</p>" ;
+      s.innerHTML = '<p><a href="https://yt5a.github.io/sumahoge.html">ソーシャルゲーム</a></p>' + "<p>テレビゲーム</p>" + "<p>フリーゲーム</p>" ;
   //document.getElementById("scroll").style.display="none";
 
 }
