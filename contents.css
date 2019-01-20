@@ -1,7 +1,7 @@
 #game {
 position: absolute;
 top: 400px;
-left: 800px;
+left: 600px;
 }
 
 #game :hover {
@@ -13,7 +13,7 @@ left: 2px;
 #book {
 position: absolute;
 top: 270px;
-left: 850px;
+left: 650px;
 }
 
 #book :hover {
@@ -25,7 +25,7 @@ left: 2px;
 #scroll {
 position: absolute;
 top: 70px;
-left: 1000px;
+left: 800px;
 /*background-color: #ffffff*/
 }
 
@@ -33,4 +33,4 @@ left: 1000px;
 #menu {
 	position: absolute ;
 	top: 0px ;
-	left: 950px ;
+	left: 750px ;
