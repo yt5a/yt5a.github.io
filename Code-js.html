@@ -14,11 +14,11 @@
       <h3>１、クリック時の座標の取得</h3>
      </div>
     <p><pre><code>
-      		&lt;HEAD>
-      			&lt;TITLE>要素内記述	&lt;/TITLE&gt;
-      			&lt;META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"&gt;
-      			&lt;LINK REL="stylesheet" TYPE="text/css" HREF="../../../master.css"&gt;
-      			&lt;SCRIPT TYPE="text/javascript"&gt;
+      		&lt;head&gt;
+      			&lt;title>要素内記述&lt;/title&gt;
+      			&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+      			&lt;link rel="stylesheet" TYPE="text/css" HREF="../../../master.css"&gt;
+      			&lt;script type="text/javascript"&gt;
       			function func()
       			{
       				var hs = document.getElementById('test');
@@ -28,13 +28,13 @@
       			{
       				alert("x: " + event.pageX + ", y: " + event.pageY);
       			}
-      			&lt;/SCRIPT&gt;
-      		&lt;/HEAD>
-          
-      		&lt;BODY CLASS="white" onLoad="func()"&gt;
-      			&lt;H1 CLASS="center"&gt;イベント処理（	&lt;SPAN ID="test">マウスでここをクリックして下さい	&lt;/SPAN&gt;）	&lt;/H1&gt;
-      		&lt;/BODY&gt;
-      		&lt;/HTML&gt;
+      			&lt;/script&gt;
+      		&lt;/head>
+
+      		&lt;body class="white" onLoad="func()"&gt;
+      			&lt;h1 class="center"&gt;イベント処理（&lt;span id="test">マウスでここをクリックして下さい&lt;/span&gt;）&lt;/h1&gt;
+      		&lt;/body&gt;
+      		&lt;/html&gt;
     </code></pre></p>
   </body>
 
