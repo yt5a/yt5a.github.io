@@ -10,6 +10,32 @@
     <div class="menu">
      <h1>目次</h1>
     </div>
+     <div class="bady">
+      <h3>１、クリック時の座標の取得</h3>
+     </div>
+    <p><pre><code>
+      		&lt;HEAD>
+      			&lt;TITLE>要素内記述	&lt;/TITLE&gt;
+      			&lt;META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"&gt;
+      			&lt;LINK REL="stylesheet" TYPE="text/css" HREF="../../../master.css"&gt;
+      			&lt;SCRIPT TYPE="text/javascript"&gt;
+      			function func()
+      			{
+      				var hs = document.getElementById('test');
+      				hs.addEventListener("click", mouseClick);
+      			}
+      			function mouseClick(event)
+      			{
+      				alert("x: " + event.pageX + ", y: " + event.pageY);
+      			}
+      			&lt;/SCRIPT&gt;
+      		&lt;/HEAD>
+          
+      		&lt;BODY CLASS="white" onLoad="func()"&gt;
+      			&lt;H1 CLASS="center"&gt;イベント処理（	&lt;SPAN ID="test">マウスでここをクリックして下さい	&lt;/SPAN&gt;）	&lt;/H1&gt;
+      		&lt;/BODY&gt;
+      		&lt;/HTML&gt;
+    </code></pre></p>
   </body>
 
 </html>
