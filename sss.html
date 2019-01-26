@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+  <script type="text/javascript">
+    function SaveKeyValue() {
+      if (window.localStorage != null) {
+        key = document.forms.form1.Text_key.value;
+        value = document.forms.form1.Text_value.value;
+
+        window.localStorage.setItem(key,value);
+      }
+    }
+
+    function LoadKeyValue() {
+      if (!window.localStorage != null) {
+        key = document.forms.form1.Text_key.value;
+        value = window.localStorage.getItem(key)
+        document.forms.form1.Text_value.value=value;
+      }
+    }
+
+    function RemoveKeyValue() {
+      if (!window.localStorage != null) {
+        key = document.forms.form1.Text_key.value;
+        window.localStorage.removeItem(key);
+      }
+    }
+
+    function ClearKeyValue() {
+      if (!window.localStorage != null) {
+        window.localStorage.clear();
+      }
+    }
+  </script>
+</head>
+<body>
+  <form id="form1">
+    Key <input id="Text_key" type="text" /><br/>
+    Value <input id="Text_value" type="text" /><br />
+    <input id="Button1" type="button" value="保存" onclick="SaveKeyValue()" /><br/>
+    <input id="Button2" type="button" value="読み込み" onclick="LoadKeyValue()" /><br />
+    <input id="Button3" type="button" value="削除" onclick = "RemoveKeyValue()" /><br />
+    <input id="Button4" type="button" value="すべてクリア" onclick="ClearKeyValue()" /><br />
+
+  </form>
+</body>
+</html>
