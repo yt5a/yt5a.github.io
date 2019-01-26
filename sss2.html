@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+
+if (!localStorage['accessCount']) localStorage['accessCount'] = 1;
+var c = localStorage['accessCount'];
+if (c == 1) document.write('初めてのご訪問ありがとうございます。');
+else document.write(c + '回目のご訪問ありがとうございます。');
+localStorage['accessCount']++;
+
+</script>
+  </head>
+  <body>
+
+  </body>
+</html>
