@@ -35,6 +35,72 @@
      <p>0.0から1.0の範囲の数値で透明度を設定する。0に近くにつれ透明に、1に近くにつれ不透明化となる。</p>
      <p>また、color: rgba(0,0,0,数字);を使っても透明化ができる。</p>
 
+     <div class="bady">
+      <h3>3、表示・非表示</h3>
+     </div>
+      <p><pre><code>
+        &lt;html&gt;
+        &lt;head&gt;
+
+        &lt;style type="text/css"&gt;
+
+          /*全体*/
+          .hidden_box {
+              margin: 2em 0;/*前後の余白*/
+              padding: 0;
+          }
+
+          /*ボタン装飾*/
+          .hidden_box label {
+              padding: 15px;
+              font-weight: bold;
+              border: solid 2px black;
+              cursor :pointer;
+          }
+
+          /*ボタンホバー時*/
+          .hidden_box label:hover {
+              background: #efefef;
+          }
+
+          /*チェックは見えなくする*/
+          .hidden_box input {
+              display: none;
+          }
+
+          /*中身を非表示にしておく*/
+          .hidden_box .hidden_show {
+              height: 0;
+              padding: 0;
+              overflow: hidden;
+              opacity: 0;
+              transition: 0.8s;
+          }
+
+          /*クリックで中身表示*/
+          .hidden_box input:checked ~ .hidden_show {
+              padding: 10px 0;
+              height: auto;
+              opacity: 1;
+          }
+
+        &lt;/style>
+
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;div class="hidden_box"&gt;
+              &lt;label for="label1">クリックして表示&lt;/label&gt;
+              &lt;input type="checkbox" id="label1"/&gt;
+              &lt;div class="hidden_show"&gt;
+                <!--非表示ここから-->
+                	&lt;p&gt;隠したいテキスト&lt;/p&gt;
+                <!--ここまで-->
+              &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+     </code></pre></p>
+
   </body>
 
 </html>
