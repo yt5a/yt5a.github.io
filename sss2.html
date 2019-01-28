@@ -5,15 +5,17 @@
     <title></title>
     <script>
 
-if (!localStorage['accessCount']) localStorage['accessCount'] = 1;
-var c = localStorage['accessCount'];
+if (!localStorage['p']) localStorage['p'] = 1;
+var c = localStorage['p'];
 if (c == 1) document.write('初めてのご訪問ありがとうございます。');
 else document.write(c + '回目のご訪問ありがとうございます。');
-localStorage['accessCount']++;
+localStorage['p']++;
 
 </script>
+
   </head>
   <body>
-
+    <span id="fortune"></span>
+<script src="fortune.js"></script>
   </body>
 </html>
