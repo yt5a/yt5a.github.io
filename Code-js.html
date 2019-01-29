@@ -160,6 +160,35 @@ localStorage['accessCount']++;
 </code></pre></p>
 <p>備考</p>
 <p>この頭にtop.を付けることで全フレーム、parent.を付けることで親フレームを解除することができる。</p>
+
+<div class="bady">
+ <h3>6、画像、文字の回転</h3>
+</div>
+<p>例文</p>
+<p><pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title>画像を回転させるサンプル&lt;/title&gt;
+  &lt;script&gt;
+  var d = 0;
+  function kaiten(x){
+    var e = document.getElementById("img1");
+    d = d + x;
+    e.style.transform = "rotate(" + d + "deg)";
+  }
+  &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;img id="img1" src="sample.png" /&gt;&lt;br&gt;
+  &lt;input type="button" value="右へ90度回転" onclick="kaiten(90);"&gt;
+  &lt;input type="button" value="左へ90度回転" onclick="kaiten(-90);"&gt;
+  &lt;input type="button" value="180度回転" onclick="kaiten(180);"&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre></p>
+
   </body>
 
 </html>
