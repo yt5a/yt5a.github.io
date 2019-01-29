@@ -124,6 +124,32 @@ localStorage['accessCount']++;
 &lt;/html&gt;
   </code></pre></p>
 
+  <div class="bady">
+   <h3>4、否定の論理演算子</h3>
+  </div>
+  <p>例文</p>
+ <p><pre><code>
+   if(!true){
+       alert("trueです。");
+   }
+
+   else{
+       alert("falseです。");
+   }
+ </code></pre></p>
+ <p>この場合falseが返される。</p>
+
+ <p><pre><code>
+   if(!!true){
+       alert("trueです。");
+   }
+
+   else{
+       alert("falseです。");
+   }
+ </code></pre></p>
+ <p>この場合trueが返される。</p>
+ <p>後者は、undefined（未定義）のキーワードに対応していないブラウザで使える。</p>
   </body>
 
 </html>
