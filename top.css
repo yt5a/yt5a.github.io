@@ -7,6 +7,14 @@ header {
     height: 10%;
 }
 
+.dim {
+  cursor: none;
+}
+
+.dim :hover{
+  cursor: none;
+}
+
 /*top*/
 .scroll {
 position: absolute;

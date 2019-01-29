@@ -1,21 +1,43 @@
-<!DOCTYPE html>
-<html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script>
+<HTML>
+<HEAD>
+<TITLE>Fish-2</TITLE>
+<script type="text/javascript">
+var speed = 100 ; // この値（ミリ秒）毎に画面が変わる
+var tt=  800 ;
+var pxa= 800 ; // 鶴のX方向位置(Pixel)
+var pya= 100 ; // 鶴のY方向位置(Pixel)
+var stp=   20 ; // 鶴の1回移動量(Pixel)
 
-if (!localStorage['p']) localStorage['p'] = 1;
-var c = localStorage['p'];
-if (c == 1) document.write('初めてのご訪問ありがとうございます。');
-else document.write(c + '回目のご訪問ありがとうございます。');
-localStorage['p']++;
+function move(t)
+{
+  pya = t   ;  //  下に移動させる場合には　pya を変更する
 
+  document.getElementById("dot1").style.left = pxa ;
+  document.getElementById("dot1").style.top  = pya ;
+}
+
+function disp()
+{
+  if(tt>=-160) //ttが-160以上の時。
+  {
+    setTimeout("disp()", speed);
+  }
+  else
+  {
+    tt = 800  ;
+    setTimeout("disp()", speed);
+  }
+  tt=tt-stp ;
+  move(tt) ;
+}
 </script>
-
-  </head>
-  <body>
-    <span id="fortune"></span>
-<script src="fortune.js"></script>
-  </body>
-</html>
+</HEAD>
+<BODY>
+<div id="dot1" style="position: absolute; Z-INDEX: 2; VISIBILITY: visible; TOP: 150px; LEFT: 15px; width:1;"">
+<img src="https://yt5a.github.io/images/senyou.png" border="0">
+</div>
+<script>
+disp() ;
+</script>
+</BODY>
+</HTML>
