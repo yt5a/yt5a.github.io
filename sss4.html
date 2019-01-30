@@ -1,0 +1,30 @@
+
+<html>
+<head>
+<title>画像を動かす</title>
+
+<script language="JavaScript"><!--
+x=0;
+y=16;
+v=2;
+
+function moveBall()
+{
+x+=v;
+y+=v;
+if((x>224)||(x<0))v=-v;
+
+document.ballImage.style.left=x*2;
+document.ballImage.style.top=y;
+}
+// --></script>
+
+</head>
+
+<body onLoad="setInterval('moveBall()',20)">
+
+
+<img src="https://yt5a.github.io/images/push-title.png" name="ballImage" style="position:absolute;left:0px;top:16px;">
+
+</body>
+</html>
