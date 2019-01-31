@@ -43,17 +43,18 @@
 }
 
 
-/*バック*/
-.box13 {
+/*タイトル*/
+.tt {
     padding: 0.5em 1em;
     margin: 2em 0;
-    color: #FFF;
-    background: #6eb7ff;
-    border-bottom: solid 6px #3f87ce;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 9px;
+    border: double 5px #4ec4d3;
 }
-.box13 p {
+.tt p {
+    margin: 0;
+    padding: 0;
+}
+
+.tt h1 {
     margin: 0;
     padding: 0;
 }
