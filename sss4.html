@@ -6,25 +6,25 @@
 <script language="JavaScript"><!--
 x=0;
 y=16;
-v=2;
+v=0.2;
 
 function moveBall()
 {
-x+=v;
+x=y*y-25;
 y+=v;
-if((x>224)||(x<0))v=-v;
+if((y>20)||(y<0))v=-v;
 
-document.ballImage.style.left=x*2;
+document.ballImage.style.left=x;
 document.ballImage.style.top=y;
 }
 // --></script>
 
 </head>
 
-<body onLoad="setInterval('moveBall()',20)">
+<body onLoad="setInterval('moveBall()',30)">
 
 
-<img src="https://yt5a.github.io/images/push-title.png" name="ballImage" style="position:absolute;left:0px;top:16px;">
+<img src="https://yt5a.github.io/images/push-title.png" name="ballImage" style="position:absolute;left:100px;top:160px;">
 
 </body>
 </html>
