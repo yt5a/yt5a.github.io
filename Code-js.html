@@ -189,6 +189,28 @@ localStorage['accessCount']++;
   &lt;/html&gt;
 </code></pre></p>
 
+<div class="bady">
+ <h3>7、文字の切り出し</h3>
+</div>
+<p>例文</p>
+<p><pre><code>
+  //元の文字列
+  var str = "あいうえおかきくけこさしすせそ";
+
+  //1文字切り出す
+  document.write(str.charAt(0) + "&lt;br&gt;");
+  //出力は「あ」
+
+  //文字数を指定して抜き出す
+  document.write(str.substr(1,4) + "&lt;br&gt;");
+  //出力は「いうえお」
+
+  //指定範囲の文字を切り出す
+  document.write(str.substring(5,10) + "&lt;br&gt;");
+  //出力は「かきくけこ」
+
+</code></pre></p>
+
   </body>
 
 </html>
