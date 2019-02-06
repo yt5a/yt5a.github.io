@@ -17,7 +17,7 @@ function handleKeydown(event){
 
   if (key == 1) {tx2();sessionStorage['phase'] = 2;}
 
-  if (key == 2&&or == 2) {tx0();reset1();sessionStorage['phase'] = 3}
+  if (key == 2&&or == 2) {tx3();sessionStorage['phase'] = 3}
 
   }
 
@@ -42,7 +42,9 @@ function handleKeydown(event){
   else if (keyCode == 38) {
   var key = sessionStorage['phase']
 
-tx2a();sessionStorage['select'] = 1;
+  if (key == 2) {tx2a();sessionStorage['select'] = 1;}
+
+  if (key == 3) {tx3a();sessionStorage['select'] = 1;}
   }
 
 
@@ -50,7 +52,9 @@ tx2a();sessionStorage['select'] = 1;
   else if (keyCode == 40) {
   var key = sessionStorage['phase']
 
-tx2b();sessionStorage['select'] = 2;
+  if (key == 2) {tx2b();sessionStorage['select'] = 2;}
+
+  if (key == 3) {tx3b();sessionStorage['select'] = 2;}
   }
 
 }
