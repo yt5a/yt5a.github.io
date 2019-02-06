@@ -39,4 +39,6 @@ function tx4(){
   var gender = ['男性','女性'];
   var a = sessionStorage['gender1']-1;
   document.getElementById("tx1").innerHTML = '<p>' + gender[a] + 'ですね。では、ステータスを決めます。スペースキーを押してください。' + '</p>';
+  sessionStorage['gender1'] = gender[a]
+  st1();
 }

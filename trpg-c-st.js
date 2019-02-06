@@ -1,8 +1,17 @@
 
 
+function st1(){
+  var a = sessionStorage['gender1']
+  document.getElementById("sta1").innerHTML = '性別　'+ a;
+//ステータスセット。
+  var dice= document.createElement('div');
+  dice.setAttribute('id','dice');
+  dice.innerHTML = '<span id="str1"></span>' + "<br>" + '<span id="con1"></span>' + "<br>" + '<span id="siz1"></span>' + "<br>" + '<span id="int1"></span>' + "<br>" + '<span id="pow1"></span>' + "<br>" + '<span id="dex1"></span>' + "<br>" + '<span id="app1"></span>' + "<br>" + '<span id="edu1"></span>';
+  sta1.insertBefore(dice, null);
+}
+
 //ステータス1//
-  function st1(){
-  document.getElementById("sta1").innerHTML = '<span id="str1"></span>' + "<br>" + '<span id="con1"></span>' + "<br>" + '<span id="siz1"></span>' + "<br>" + '<span id="int1"></span>' + "<br>" + '<span id="pow1"></span>' + "<br>" + '<span id="dex1"></span>' + "<br>" + '<span id="app1"></span>' + "<br>" + '<span id="edu1"></span>';
+  function st2(){
 
   var z = document.getElementById('str1');
   var a = Math.floor(Math.random() * 6) + 1;

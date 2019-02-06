@@ -24,7 +24,7 @@ function handleKeydown(event){
 
   if (key == 3&&or == 2) {sessionStorage['gender1'] = sessionStorage['select'];sessionStorage['phase'] = 4;tx4()}
 
-  if (key == 4) {sessionStorage['phase'] = 5;st1()}
+  if (key == 4) {sessionStorage['phase'] = 5;st2()}
   }
 
 
