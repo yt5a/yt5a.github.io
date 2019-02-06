@@ -3,7 +3,7 @@ function tx0(){
 }
 
 function tx1(){
-  document.getElementById("tx1").innerHTML = '<p>' + 'Welcome player。このゲームをプレイしてくださりありがとうございます。' + '</p>';
+  document.getElementById("tx1").innerHTML = '<p>' + 'Welcome player。このゲームをプレイしてくださり、まことにありがとうございます。' + '</p>';
 }
 
 function tx2(){
