@@ -1,7 +1,7 @@
 
 
 //ステータス1//
-  function reset1(){
+  function st1(){
   document.getElementById("sta1").innerHTML = '<span id="str1"></span>' + "<br>" + '<span id="con1"></span>' + "<br>" + '<span id="siz1"></span>' + "<br>" + '<span id="int1"></span>' + "<br>" + '<span id="pow1"></span>' + "<br>" + '<span id="dex1"></span>' + "<br>" + '<span id="app1"></span>' + "<br>" + '<span id="edu1"></span>';
 
   var z = document.getElementById('str1');

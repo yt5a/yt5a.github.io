@@ -1,6 +1,7 @@
 
-sessionStorage['phase'] = 0
-sessionStorage['select'] = 0
+sessionStorage['phase'] = 0;
+sessionStorage['select'] = 0;
+sessionStorage['gender1'] = 0;
 
 window.addEventListener("keydown", handleKeydown);
 
@@ -13,12 +14,17 @@ function handleKeydown(event){
   var key = sessionStorage['phase']
   var or = sessionStorage['select']
 
-  if (key == 0) {tx1();sessionStorage['phase'] = 1}
+  if (key == 0) {sessionStorage['phase'] = 1;tx1();img1()}
 
-  if (key == 1) {tx2();sessionStorage['phase'] = 2;}
+  if (key == 1) {sessionStorage['phase'] = 2;tx2()}
 
-  if (key == 2&&or == 2) {tx3();sessionStorage['phase'] = 3}
+  if (key == 2&&or == 2) {sessionStorage['phase'] = 3;tx3()}
 
+  if (key == 3&&or == 1) {sessionStorage['gender1'] = sessionStorage['select'];sessionStorage['phase'] = 4;tx4()}
+
+  if (key == 3&&or == 2) {sessionStorage['gender1'] = sessionStorage['select'];sessionStorage['phase'] = 4;tx4()}
+
+  if (key == 4) {sessionStorage['phase'] = 5;st1()}
   }
 
 
@@ -26,7 +32,7 @@ function handleKeydown(event){
   else if (keyCode == 39) {
   var key = sessionStorage['phase']
 
-  if (key == 4) {tx0();reset1();sessionStorage['phase'] = 3}
+  if (key == 100) {tx0();st1();sessionStorage['phase'] = 3}
   }
 
 
@@ -34,7 +40,7 @@ function handleKeydown(event){
   else if (keyCode == 37) {
   var key = sessionStorage['phase']
 
-  if (key == 4) {tx0();reset1();sessionStorage['phase'] = 3}
+  if (key == 100) {tx0();st1();sessionStorage['phase'] = 3}
   }
 
 
