@@ -14,7 +14,7 @@ function handleKeydown(event){
   var key = sessionStorage['phase']
   var or = sessionStorage['select']
 
-  if (key == 0) {sessionStorage['phase'] = 1;tx1();img1()}
+  if (key == 0) {sessionStorage['phase'] = 1;tx1();img1();stnull()}
 
   if (key == 1) {sessionStorage['phase'] = 2;tx2()}
 

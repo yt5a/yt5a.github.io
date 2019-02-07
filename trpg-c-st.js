@@ -1,3 +1,7 @@
+function stnull(){
+  document.getElementById("sta1").innerHTML = '';
+}
+
 function st0(){
   document.getElementById("sta1").innerHTML = '<span id="name1">[メインキャラクター]</span>';
 }
