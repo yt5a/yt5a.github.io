@@ -18,13 +18,19 @@ function handleKeydown(event){
 
   if (key == 1) {sessionStorage['phase'] = 2;tx2()}
 
-  if (key == 2&&or == 2) {sessionStorage['phase'] = 3;tx3()}
+  if (key == 2&&or == 2) {sessionStorage['phase'] = 3;st0();tx3()}
 
   if (key == 3&&or == 1) {sessionStorage['gender1'] = sessionStorage['select'];sessionStorage['phase'] = 4;tx4()}
 
   if (key == 3&&or == 2) {sessionStorage['gender1'] = sessionStorage['select'];sessionStorage['phase'] = 4;tx4()}
 
   if (key == 4) {sessionStorage['phase'] = 5;st2()}
+
+  if (key == 5) {sessionStorage['phase'] = 6;tx5()}
+
+  if (key == 6&&or == 1) {sessionStorage['phase'] = 7;tx6()}
+
+  if (key == 6&&or == 2) {st2()}
   }
 
 
@@ -51,6 +57,8 @@ function handleKeydown(event){
   if (key == 2) {tx2a();sessionStorage['select'] = 1;}
 
   if (key == 3) {tx3a();sessionStorage['select'] = 1;}
+
+  if (key == 6) {tx5a();sessionStorage['select'] = 1;}
   }
 
 
@@ -61,6 +69,8 @@ function handleKeydown(event){
   if (key == 2) {tx2b();sessionStorage['select'] = 2;}
 
   if (key == 3) {tx3b();sessionStorage['select'] = 2;}
+
+  if (key == 6) {tx5b();sessionStorage['select'] = 2;}
   }
 
 }
