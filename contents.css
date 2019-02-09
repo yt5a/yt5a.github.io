@@ -22,6 +22,12 @@ top: 2px;
 left: 2px;
 }
 
+#hito {
+position: absolute;
+top: 50px;
+left:30px;
+}
+
 #scroll {
 position: absolute;
 top: 70px;
