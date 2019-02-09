@@ -23,8 +23,8 @@ left: 2px;
 }
 
 #hito {
-position: absolute;
-top: 50px;
+position:fixed;
+top:50px;
 left:30px;
 }
 
