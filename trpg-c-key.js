@@ -18,7 +18,7 @@ function handleKeydown(event){
 
   if (key == 1) {sessionStorage['phase'] = 2;tx2()}
 
-  if (key == 2&&or == 2) {sessionStorage['phase'] = 3;st0();tx3()}
+  if (key == 2&&or == 2) {sessionStorage['phase'] = 3;sessionStorage['select'] = 0;st0();tx3()}
 
   if (key == 3&&or == 1) {sessionStorage['gender1'] = sessionStorage['select'];sessionStorage['phase'] = 4;tx4()}
 
@@ -26,7 +26,7 @@ function handleKeydown(event){
 
   if (key == 4) {sessionStorage['phase'] = 5;st2()}
 
-  if (key == 5) {sessionStorage['phase'] = 6;tx5()}
+  if (key == 5) {sessionStorage['phase'] = 6;sessionStorage['select'] = 0;tx5()}
 
   if (key == 6&&or == 1) {sessionStorage['phase'] = 7;tx6()}
 

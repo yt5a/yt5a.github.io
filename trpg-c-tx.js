@@ -56,3 +56,23 @@ function tx5b(){
   document.getElementById("n").innerHTML = '<p id= n>' + 'いいえ←' + '</p>';
   document.getElementById("y").innerHTML = '<p id="y">はい</p>';
 }
+
+function tx6(){
+  var prs = ["医師","警官","探偵","弁護士","ミュージシャン","研究家"]
+  for (var i = 1; i < prs.length+1; i++) {
+  if (i ==1) {
+  var pr= '<p id= "pr' + i +'">' + i + '[' + prs[i-1] + ']' + '</p>';
+  }
+  else {
+  var pr = pr + '<p id= "pr' + i +'">' + i + '[' + prs[i-1] + ']' + '</p>';
+ }
+}
+  document.getElementById("tx1").innerHTML = '<p id= "pr">' + 'それでは職業の設定を行います。' + '</p>' + pr;
+  }
+
+
+//  var pro= document.createElement('div');
+//  pro.setAttribute('id','pro');
+//  pro.innerHTML = '<p id="pro">あああ</p>';
+//  pr.insertBefore(pro, null);
+//}
