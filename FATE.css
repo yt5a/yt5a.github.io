@@ -1,0 +1,16 @@
+#テキスト {
+    height: 200px;
+    width:90%;
+    top: 530px;
+    left:3%;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    background: #cde4ff;
+    border: double 5px #4ec4d3;
+    position: absolute;
+    margin: auto;
+}
+#テキスト p {
+    margin: 0;
+    padding: 0;
+}
