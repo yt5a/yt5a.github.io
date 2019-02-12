@@ -14,3 +14,20 @@
     margin: 0;
     padding: 0;
 }
+
+#name {
+    height:auto;
+    width:auto;
+    top: 460px;
+    left:3%;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    background: #cde4ff;
+    border: double 5px #4ec4d3;
+    position: absolute;
+    margin: auto;
+}
+#name p {
+    margin: 0;
+    padding: 0;
+}
