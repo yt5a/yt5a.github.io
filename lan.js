@@ -86,8 +86,8 @@ word = "";
   moji.setAttribute('id','jisu');
   moji.innerHTML = ii;
   table.insertBefore(moji, null);
-
   table.insertBefore(document.createElement('hr'), null);
+
   //テーブル3生成
   var moji= document.createElement('div');
   moji.setAttribute('id','three');
@@ -109,6 +109,7 @@ word = "";
       onemojisu.push(document.getElementById(oneji).innerHTML);
    }
 
+//編集
 do {
   var session = 0;
   for (var i = 0; i < topmoji+1; i++) {
