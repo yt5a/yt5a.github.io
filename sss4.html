@@ -1,30 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body onload="init();">
+    <div id="output_client" ></div>
+    <div id="output_screen"></div>
+    <p id='tomato'>
+      トマト
+    </div>
+    <script type="text/javascript">
+    function init()
+    {
+      window.onmousemove = handleMouseMove;
+      function handleMouseMove(event) {
+        event = event || window.event; // IE対応
+        target = document.getElementById("output_client");
+        target.innerHTML = "Client X:" + event.clientX + ", Client Y:" + event.clientY;
 
-<html>
-<head>
-<title>画像を動かす</title>
-
-<script language="JavaScript"><!--
-x=0;
-y=16;
-v=0.2;
-
-function moveBall()
-{
-x=y*y-25;
-y+=v;
-if((y>20)||(y<0))v=-v;
-
-document.ballImage.style.left=x;
-document.ballImage.style.top=y;
-}
-// --></script>
-
-</head>
-
-<body onLoad="setInterval('moveBall()',30)">
-
-
-<img src="https://yt5a.github.io/images/push-title.png" name="ballImage" style="position:absolute;left:100px;top:160px;">
-
-</body>
+        target = document.getElementById("output_screen");
+        target.innerHTML = "Screen X:" + event.screenX + ", Screen Y:" + event.screenY;
+      }
+      var pp = event.clientY;
+console.log(pp)
+          tomato.style.position = "absolute";
+          //10の位置に動くぜ
+          tomato.style.top = pp + "px";
+    }
+    </script>
+  </body>
 </html>
