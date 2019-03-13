@@ -4,29 +4,9 @@
 <meta charset="UTF-8">
 <title>canvasで図形を描く</title>
 <link rel="stylesheet" href="game.css">
-<script type="text/javascript">
-<!--
-function test() {
-  var wtop=window.innerHeight;
-  //描画コンテキストの取得
-  var canvas = document.getElementById('main');
-  canvas.setAttribute('width',wtop)
-  canvas.setAttribute('height',wtop)
-
-  var mainw = document.getElementById('main').width
-  var canvas = document.getElementById('sub1');
-  canvas.setAttribute('width',mainw/2)
-  canvas.setAttribute('height',mainw/2)
-  if (canvas.getContext) {
-    var context = canvas.getContext('2d');
-//
-  }
-}
-//-->
-</script>
+<script src="game-key.js"></script>
+<script src="game.js"></script>
 </head>
-<body onLoad="test()">
-<canvas id="main" style="background-color:gray;"></canvas>
-<canvas id="sub1" style="background-color:gray;"></canvas>
+<body bgcolor=#33c9c9>
 </body>
 </html>
