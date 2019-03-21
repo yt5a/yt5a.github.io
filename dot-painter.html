@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <title>Sample</title>
   <style id = 'pain'>
-    .image {
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      width: 900px;
-    }
     .image__svg {
       position: absolute;
       top: 150px;
@@ -18,12 +12,14 @@
     .image__sep {
       position: absolute;
       flex-grow: 1;
-      top: 50px;
+      left:500px;
+      top: 100px;
       text-align: center;
     }
     .image__converted {
       position: absolute;
-      top: 600px;
+      top: 150px;
+      left:500px;
       width: 400px;
       height: 400px;
       border: 1px solid rgba(0, 0, 0, 0.5);
@@ -31,6 +27,7 @@
   </style>
 </head>
 <body>
+<h1>Dot-Painter  Ver.0.18</h1>
 <div class="image">
   <div class="image__svg">
 
@@ -47,24 +44,39 @@
   </div>
 
   <div class="image__sep">
-    <div>==&gt;&gt;</div>
     <div><button id="convert-button">変換する</button></div>
   </div>
-
   <div class="image__converted">
-  <img src="" id="converted-image" download="file.png">
+  <img src="" id="convertedimage">
   </div>
+<!--<a href="" id="down"download="サンプル.txt">ダウンロード</a>-->
 </div>
-<div><button id="button" onclick="draw()">描画</button></div>
 <form name="tx">
-サイズ：<input type="text" id="dottx" value="2"><br>
+描写サイズ：<input type="text" id="dottx" value="10"onchange="draw()"><br>
 </form>
+	ペンの色:<select id="fill">
+	    <option value="0">黒</option>
+	    <option value="1">白</option>
+	    <option value="2">赤</option>
+	    <option value="3">青</option>
+	    <option value="4">黄色</option>
+	    <option value="5">緑</option>
+	</select>
 <script src="dot-painter.js"></script>
 <script>
-//draw
+//startup
+  savex =[];
+  savey =[];
+  savepx = "";
+  savec =[];
   pxc = 0;
-function draw() {
 
+//color
+  paret = ["#000000","#ffffff","#ff0000","#0000ff","#ffff00","#008000"]
+
+  draw();
+
+function draw() {
   dot = document.tx.dottx.value;
   pxx = 400;
   pxl = pxx/dot;
@@ -80,11 +92,21 @@ function draw() {
   }
   pxl = pxl + pxc;
   }
-  document.getElementById("svg").innerHTML = dotx + doty;
+  if (!!savex) {
+  for (var i = 0; i < savex.length; i++) {
+  dotpx = (savex[i])*pxc;
+  dotpy = (savey[i])*pxc;
+  if (i==0) {
+  savepx = '<rect id= ' + 'p' + savex[i] + savey[i] + ' ' +'value='+ paret[color] +' x="' + dotpx + '" y="' + dotpy + '" width="' + pxc + '" height="' + pxc + '" fill="' + savec[i] + '"/>'
+    }
+  else {
+  savepx = savepx + '<rect id= ' + 'p' + savex[i] + savey[i] + ' ' +'value='+ paret[color] +'  x="' + dotpx + '" y="' + dotpy + '" width="' + pxc + '" height="' + pxc + '" fill="' + savec[i] + '"/>'
+  }
+   }
+  }
+  document.getElementById("svg").innerHTML = dotx + doty + savepx;
 }
-</script>
 
-<script type="text/javascript">
   let target = document.getElementById('svg');
 
   target.addEventListener('click', getPosition);
@@ -92,14 +114,19 @@ function draw() {
   if (!pxc==0) {
   check = 'p' + Math.floor(e.offsetX/pxc) + Math.floor(e.offsetY/pxc)
   if(!document.getElementById(check)){
+
+  color = document.getElementById("fill").value;
+
+  savex.push(Math.floor(e.offsetX/pxc))
+  savey.push(Math.floor(e.offsetY/pxc))
+  savec.push(paret[color])
   dotpx = Math.floor(e.offsetX/pxc)*pxc;
   dotpy = Math.floor(e.offsetY/pxc)*pxc;
   var gp = document.getElementById("svg").innerHTML
-  document.getElementById("svg").innerHTML = gp + '<rect id=' + check + ' x="' + dotpx + '" y="' + dotpy + '" width="' + pxc + '" height="' + pxc + '" fill="rgbaffffff"/>';
+  document.getElementById("svg").innerHTML = gp + '<rect id=' + check + ' ' +'value='+ paret[color] +' x="' + dotpx + '" y="' + dotpy + '" width="' + pxc + '" height="' + pxc + '" fill="' + paret[color] + '"/>';
   }
  }
 }
-
 
 </script>
 </body>

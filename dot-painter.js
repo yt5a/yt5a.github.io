@@ -4,7 +4,7 @@
       document.getElementById('convert-button').addEventListener('click', function() {
         svg2imageData(document.getElementById('svg'), function(data) {
           console.log(data);
-          document.getElementById('converted-image').src = data;
+          document.getElementById('convertedimage').src = data;
         }, function(error) {
           console.log(error);
           alert('failed to convert');
