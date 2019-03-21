@@ -46,6 +46,14 @@ background-color: #ffffff
     left: 400px;
   }
 
+  #app3 {
+   }
+   #app3 img {
+   position: fixed;
+    top: 20px;
+    left: 500px;
+  }
+
 #titlepush {
  }
  #titlepush img {
