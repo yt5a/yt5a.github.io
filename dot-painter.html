@@ -116,8 +116,8 @@ function draw() {
   target.addEventListener('click', getPosition);
   function getPosition(e) {
   if (!pxc==0) {
-  checkx = Math.floor(e.offsetX/pxc)+paparx;
-  checky = Math.floor(e.offsetY/pxc)+papary;
+  checkx = Math.floor(e.offsetX/pxc)-paparx;
+  checky = Math.floor(e.offsetY/pxc)-papary;
   check = 'p' + checkx + checky;
   if(!document.getElementById(check)){
 
