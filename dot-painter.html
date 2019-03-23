@@ -54,11 +54,11 @@
 <!--<a href="" id="down"download="サンプル.txt">ダウンロード</a>-->
 </div>
 <form name="tx">
-描写サイズ：<input type="text" id="dottx" value="10"onchange="draw()"><br>
+描写サイズ：(max255)<input type="text" id="dottx" value="10"onchange="drawbefore()"><br>
 </form>
 
 <form name="lc">
-<input id="linecheck" type="checkbox" checked onchange="draw()"><label for="Checkbox1">ライン消去</label><br/>
+<input id="linecheck" type="checkbox" checked onchange="draw()"><label for="Checkbox1">ライン on/off</label><br/>
 </form>
 <div><button onclick="re()">一つ戻る</button>
 <button onclick="rere()">一つ進む</button></div>
@@ -91,7 +91,16 @@
 
   draw();
 
-function draw() {
+  function drawbefore(){
+  if (document.tx.dottx.value < 256) {
+  draw()
+ }
+ else {
+  alert("Less than 256 characters over.")
+ }
+}
+
+  function draw() {
   dot = document.tx.dottx.value;
   pxx = 400;
   pxl = pxx/dot;
