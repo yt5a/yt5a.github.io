@@ -29,7 +29,7 @@
 </head>
 
 <body>
-<h1>Dot-Painter  Ver.0.38</h1>
+<h1>Dot-Painter  Ver.0.58</h1>
 <div class="image">
   <div class="image__svg">
 
@@ -57,6 +57,7 @@
 描写サイズ：<input type="text" id="dottx" value="10"onchange="draw()"><br>
 </form>
 <div><button onclick="re()">一つ戻る</button></div>
+<div><button onclick="rere()">一つ進む</button></div>
 	ペンの色:<select id="fill">
 	    <option value="0">黒</option>
 	    <option value="1">白</option>
@@ -78,6 +79,11 @@
   papary = 0;
 //color
   paret = ["#000000","#ffffff","#ff0000","#0000ff","#ffff00","#008000"]
+//復旧
+  resavex =[];
+  resavey =[];
+  resavec =[];
+
 
   draw();
 
@@ -130,6 +136,11 @@ function draw() {
   savex.push(Math.floor(e.offsetX/pxc)-paparx)
   savey.push(Math.floor(e.offsetY/pxc)-papary)
   savec.push(paret[color])
+  if (!resavex.length==0) {
+  resavex =[];
+  resavey =[];
+  resavec =[];
+  }
   dotpx = Math.floor(e.offsetX/pxc)*pxc;
   dotpy = Math.floor(e.offsetY/pxc)*pxc;
   var gp = document.getElementById("svg").innerHTML
@@ -139,18 +150,53 @@ function draw() {
 }
 
   function re(){
+  if (!savex.length==0) {
   if (savex.length==1) {
+  resavex.push(savex[savex.length-1])
+  resavey.push(savey[savey.length-1])
+  resavec.push(savec[savec.length-1])
   savex =[];
   savey =[];
   savec =[];
   }
   else {
+  resavex.push(savex[savex.length-1])
   savex.splice(savex.length-1,savex.length-1)
+  resavey.push(savey[savey.length-1])
   savey.splice(savey.length-1,savey.length-1)
+  resavec.push(savec[savec.length-1])
   savec.splice(savec.length-1,savec.length-1)
   }
   draw();
+  console.log(savex)
+  console.log(resavex)
+ }
 }
+
+  function rere(){
+  if (!resavex.length==0) {
+  if (resavex.length==1) {
+  savex.push(resavex.slice(-1)[0])
+  savey.push(resavey.slice(-1)[0])
+  savec.push(resavec.slice(-1)[0])
+  resavex =[];
+  resavey =[];
+  resavec =[];
+  }
+  else {
+  savex.push(resavex.slice(-1)[0])
+  resavex.splice(resavex.length-1,resavex.length-1)
+  savey.push(resavey.slice(-1)[0])
+  resavey.splice(resavey.length-1,resavey.length-1)
+  savec.push(resavec.slice(-1)[0])
+  resavec.splice(resavec.length-1,resavec.length-1)
+  }
+  draw();
+ console.log(savex)
+ console.log(resavex)
+ }
+}
+
 </script>
 <script type="text/javascript">
 function right(){
