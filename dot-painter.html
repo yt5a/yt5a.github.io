@@ -162,8 +162,8 @@
   dotpx = Math.floor(e.offsetX/pxc)*pxc;
   dotpy = Math.floor(e.offsetY/pxc)*pxc;
   var gp = document.getElementById("svg").innerHTML
-  document.getElementById("svg").innerHTML = gp + '<rect id=' + check + ' ' +'value='+ paret[color] +' x="' + dotpx + '" y="' + dotpy + '" width="' + pxc + '" height="' +
-   pxc + '" fill="' + paret[color] + '"/>';
+  document.getElementById("svg").innerHTML = gp + '<rect id=' + check + ' ' +'value='+ paret[color] +' x="' + dotpx +
+   '" y="' + dotpy + '" width="' + pxc + '" height="' +pxc + '" fill="' + paret[color] + '"/>';
   }
  }
 }
@@ -220,6 +220,7 @@
 
 </script>
 <script type="text/javascript">
+//get key
 function right(){
 paparx = paparx + 1;
 draw();
