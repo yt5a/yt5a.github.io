@@ -6,19 +6,19 @@
   <style id = 'pain'>
     .image__svg {
       position: absolute;
-      top: 210px;
+      top: 240px;
       width: 400px;
     }
     .image__sep {
       position: absolute;
       flex-grow: 1;
       left:500px;
-      top: 160px;
+      top: 190px;
       text-align: center;
     }
     .image__converted {
       position: absolute;
-      top: 210px;
+      top: 240px;
       left:500px;
       width: 400px;
       height: 400px;
@@ -29,7 +29,7 @@
 </head>
 
 <body>
-<h1>Dot-Painter  Ver.0.58</h1>
+<h1>Dot-Painter  Ver.0.62</h1>
 <div class="image">
   <div class="image__svg">
 
@@ -56,8 +56,12 @@
 <form name="tx">
 描写サイズ：<input type="text" id="dottx" value="10"onchange="draw()"><br>
 </form>
-<div><button onclick="re()">一つ戻る</button></div>
-<div><button onclick="rere()">一つ進む</button></div>
+
+<form name="lc">
+<input id="linecheck" type="checkbox" checked onchange="draw()"><label for="Checkbox1">ライン消去</label><br/>
+</form>
+<div><button onclick="re()">一つ戻る</button>
+<button onclick="rere()">一つ進む</button></div>
 	ペンの色:<select id="fill">
 	    <option value="0">黒</option>
 	    <option value="1">白</option>
@@ -92,6 +96,8 @@ function draw() {
   pxx = 400;
   pxl = pxx/dot;
   pxc = pxl;
+
+  if (document.lc.linecheck.checked == true) {
   for (var i = 1; i < dot; i++) {
   if (i==1) {
   var  dotx = '<line x1="0"y1="' + pxl + '" x2=100% y2="' + pxl + '" stroke="#c44"/>';
@@ -103,6 +109,9 @@ function draw() {
   }
   pxl = pxl + pxc;
   }
+  }
+
+
   if (!savex.length == 0) {
   for (var i = 0; i < savex.length; i++) {
   dotpx = (savex[i] + paparx)*pxc;
@@ -144,10 +153,13 @@ function draw() {
   dotpx = Math.floor(e.offsetX/pxc)*pxc;
   dotpy = Math.floor(e.offsetY/pxc)*pxc;
   var gp = document.getElementById("svg").innerHTML
-  document.getElementById("svg").innerHTML = gp + '<rect id=' + check + ' ' +'value='+ paret[color] +' x="' + dotpx + '" y="' + dotpy + '" width="' + pxc + '" height="' + pxc + '" fill="' + paret[color] + '"/>';
+  document.getElementById("svg").innerHTML = gp + '<rect id=' + check + ' ' +'value='+ paret[color] +' x="' + dotpx + '" y="' + dotpy + '" width="' + pxc + '" height="' +
+   pxc + '" fill="' + paret[color] + '"/>';
   }
  }
 }
+
+
 
   function re(){
   if (!savex.length==0) {
