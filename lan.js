@@ -340,7 +340,7 @@ delete dateb[f];
   }
  }
 }
-//２文字単語数
+//3文字単語数
 var moji= document.createElement('span');
 moji.innerHTML = '3文字単語数';
 table.insertBefore(moji, null);
@@ -350,7 +350,7 @@ len.innerHTML =check.length;
 table.insertBefore(len, null);
 table.insertBefore(document.createElement('hr'), null);
 
-//2文字単語の数
+//3文字単語の数
 var moji= document.createElement('span');
 moji.innerHTML = '3文字単語種類';
 table.insertBefore(moji, null);
@@ -360,5 +360,69 @@ moji.innerHTML = ii;
 table.insertBefore(moji, null);
 table.insertBefore(document.createElement('hr'), null);
 
+//テーブル7生成
+var moji = document.createElement('div');
+moji.setAttribute('id','seven');
+moji.innerHTML ='<style>#seven{width:200px;height:110px;overflow:auto;}</style>';
+table.insertBefore(moji, null);
+
+//取得準備
+var topmoji = document.getElementById('3tanngo').innerHTML;
+var threemoji = [];
+var threemojisu = [];
+
+//取得準備
+var topmoji = document.getElementById('3tanngo').innerHTML;
+var threemoji = [];
+var threemojisu = [];
+
+//取得
+for (var i = 0; i < topmoji; i++) {
+var ii = i+1;
+var threesu = '3moji' + ii;
+var threeji = '3mojisu' + ii;
+    threemoji.push(document.getElementById(threesu).innerHTML);
+    threemojisu.push(document.getElementById(threeji).innerHTML);
+ }
+//編集
+do {
+var session = 0;
+for (var i = 0; i < topmoji; i++) {
+var a = threemojisu[i]
+var b = threemojisu[i+1]
+if (a*10 < b*10) {
+
+var c = threemojisu[i];
+var sc = threemoji[i];
+var d = threemojisu[i+1];
+var sd = threemoji[i+1];
+
+threemojisu[i] = d;
+threemoji[i] = sd;
+threemojisu[i+1] = c;
+threemoji[i+1] = sc;
+var session = 1;
+}
+}
+}while (session == 1);
+
+//添付
+var topmoji = document.getElementById('3tanngo').innerHTML;
+
+for (var i = 0; i < topmoji; i++) {
+var ii = i+1;
+
+var top3= document.createElement('span');
+top3.setAttribute('id','3top' + ii);
+top3.innerHTML = "[" + "<span>" + threemoji[i] + "</span>" + "]";
+seven.insertBefore(top3, null);
+
+var topsu3= document.createElement('span');
+topsu3.setAttribute('id','3topsu' + ii);
+topsu3.innerHTML ="<span>" + threemojisu[i] + "</span>";
+seven.insertBefore(topsu3, null);
+seven.insertBefore(document.createElement('br'), null);
+
+}
 
 }
