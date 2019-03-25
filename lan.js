@@ -291,13 +291,6 @@ table.insertBefore(document.createElement('hr'), null);
 
 
 
-
-
-
-
-
-
-
 //テーブル6生成
 var moji= document.createElement('div');
 moji.setAttribute('id','six');
@@ -424,5 +417,138 @@ seven.insertBefore(topsu3, null);
 seven.insertBefore(document.createElement('br'), null);
 
 }
+
+var moji= document.createElement('span');
+moji.innerHTML = 'top順';
+table.insertBefore(moji, null);
+table.insertBefore(document.createElement('hr'), null);
+table.insertBefore(document.createElement('hr'), null);
+
+//テーブル8生成
+var moji= document.createElement('div');
+moji.setAttribute('id','eight');
+moji.innerHTML ='<style>#eight{width:200px;height:110px;overflow:auto;}</style>';
+table.insertBefore(moji, null);
+
+
+//各4文字単語数
+var check = [];
+var dateb = [];
+for (var i = 1; i < tx0.length-2; i++) {
+if (i ==1) {
+var key = tx0.charAt(i-1)+tx0.charAt(i)+tx0.charAt(i+1)+tx0.charAt(i+2);
+    counts[key] = (counts[key])? counts[key] + 1 : 1 ;
+    dateb.push(tx0.charAt(i-1) + tx0.charAt(i) + tx0.charAt(i+1) + tx0.charAt(i+2));
+    check.push('c');
+}
+else {
+var key = tx0.charAt(i-1)+tx0.charAt(i)+tx0.charAt(i+1)+tx0.charAt(i+2);
+    counts[key] = (counts[key])? counts[key] + 1 : 1 ;
+    dateb.push(tx0.charAt(i-1) + tx0.charAt(i) + tx0.charAt(i+1) + tx0.charAt(i+2));
+    check.push('c');
+}
+
+}
+//各文字数
+ii = 0;
+for (var i = 1; i < tx0.length+1; i++) {
+if (dateb[i-1]!==undefined) {
+var ii = ii+1;
+var lenlan= document.createElement('span');
+lenlan.setAttribute('id','4lenlan' + ii);
+lenlan.innerHTML = ("[" + "<span id='4moji" + ii + "'>" + dateb[i-1] + "</span>" + "]" + "<span id='4mojisu" + ii + "'>" +counts[dateb[i-1]] + "</span>" + "<br>");
+eight.insertBefore(lenlan, null);
+}
+var set = dateb[i-1];
+for (var f = 0; f < dateb.length+1; f++) {
+if (set==dateb[f]) {
+delete dateb[f];
+  }
+ }
+}
+//3文字単語数
+var moji= document.createElement('span');
+moji.innerHTML = '4文字単語数';
+table.insertBefore(moji, null);
+var len= document.createElement('span');
+len.setAttribute('id','4len');
+len.innerHTML =check.length;
+table.insertBefore(len, null);
+table.insertBefore(document.createElement('hr'), null);
+
+//3文字単語の数
+var moji= document.createElement('span');
+moji.innerHTML = '4文字単語種類';
+table.insertBefore(moji, null);
+var moji= document.createElement('span');
+moji.setAttribute('id','4tanngo');
+moji.innerHTML = ii;
+table.insertBefore(moji, null);
+table.insertBefore(document.createElement('hr'), null);
+
+//テーブル9生成
+var moji = document.createElement('div');
+moji.setAttribute('id','nine');
+moji.innerHTML ='<style>#nine{width:200px;height:110px;overflow:auto;}</style>';
+table.insertBefore(moji, null);
+
+//取得準備
+var topmoji = document.getElementById('4tanngo').innerHTML;
+var fourmoji = [];
+var fourmojisu = [];
+
+//取得準備
+var topmoji = document.getElementById('4tanngo').innerHTML;
+var fourmoji = [];
+var fourmojisu = [];
+
+//取得
+for (var i = 0; i < topmoji; i++) {
+var ii = i+1;
+var foursu = '4moji' + ii;
+var fourji = '4mojisu' + ii;
+    fourmoji.push(document.getElementById(foursu).innerHTML);
+    fourmojisu.push(document.getElementById(fourji).innerHTML);
+ }
+//編集
+do {
+var session = 0;
+for (var i = 0; i < topmoji; i++) {
+var a = fourmojisu[i]
+var b = fourmojisu[i+1]
+if (a*10 < b*10) {
+
+var c = fourmojisu[i];
+var sc = fourmoji[i];
+var d = fourmojisu[i+1];
+var sd = fourmoji[i+1];
+
+fourmojisu[i] = d;
+fourmoji[i] = sd;
+fourmojisu[i+1] = c;
+fourmoji[i+1] = sc;
+var session = 1;
+}
+}
+}while (session == 1);
+
+//添付
+var topmoji = document.getElementById('4tanngo').innerHTML;
+
+for (var i = 0; i < topmoji; i++) {
+var ii = i+1;
+
+var top4= document.createElement('span');
+top4.setAttribute('id','4top' + ii);
+top4.innerHTML = "[" + "<span>" + fourmoji[i] + "</span>" + "]";
+nine.insertBefore(top4, null);
+
+var topsu4= document.createElement('span');
+topsu4.setAttribute('id','4topsu' + ii);
+topsu4.innerHTML ="<span>" + fourmojisu[i] + "</span>";
+nine.insertBefore(topsu4, null);
+nine.insertBefore(document.createElement('br'), null);
+
+　}
 
 }
