@@ -4,6 +4,12 @@ position: absolute;
 left:4%;
 }
 
+#menus {
+position: absolute;
+background-color:gray;
+left:66%;
+}
+
 #sub1 {
 position: absolute;
 left:66%;

@@ -1,7 +1,7 @@
-
+//document.oncontextmenu = function () {return false;}
 function board(){
 document.body.innerHTML = '<canvas id="main" style="background-color:gray;"></canvas>'+
-'<canvas id="sub1" style="background-color:gray;"></canvas>';;
+'<canvas id="sub1" style="background-color:gray;"></canvas>'
 var wtop=window.innerWidth*0.6;
 //描画
 var canvas1 = document.getElementById('main');
@@ -14,10 +14,25 @@ var mainw = document.getElementById('main').width
 var canvas2 = document.getElementById('sub1');
 canvas2.setAttribute('width',mainw/3)
 canvas2.setAttribute('height',mainw/3)
-c2height =canvas2.height;
 c2width =canvas2.width;
+c2height =canvas2.height;
+
+document.body.innerHTML = document.body.innerHTML +
+'<div id=menus style="width:' + c2width + 'px;height:' + (wtop - c2height - window.innerWidth*0.02) + 'px;top:' + (c2height + window.innerWidth*0.02) + 'px;overflow:auto;"></div>';
+menus.innerHTML = menuelement[1];
+
+let target = document.getElementById('main');
+
+target.addEventListener('click', getPosition);
+function getPosition(e) {
+alert('x' + Math.floor(e.offsetX-(c1height-c1height*0.95)/2) + 'y' + Math.floor(e.offsetY-(c1width-c1width*0.95)/2))
+session += 1;
+ }
+}
+
+function setmasu(){
 //設定
-var mainpx = 10;
+var mainpx = document.masutx.masu.value;
 //図形描写
 var canvas = document.getElementById('main');
 var c1 = canvas.getContext('2d');
@@ -44,17 +59,11 @@ for (var i = 0; i <= mainpx; i++) {
   c1.stroke() ;
 }
 
-c1.beginPath();
-c1.fillRect(20, 20,80,240);
-
-let target = document.getElementById('main');
-
-target.addEventListener('click', getPosition);
-function getPosition(e) {
-alert('x' + Math.floor(e.offsetX-mphp) + 'y' + Math.floor(e.offsetY-mpwp))
+//c1.beginPath();c1.fillRect(20, 20,80,240);
 }
 
 
+if (1==session){
 //図形描写2
 var canvas = document.getElementById('sub1');
 var c2 = canvas.getContext('2d');
@@ -79,5 +88,5 @@ for (var i = 0; i <= 7; i++) {
   c2.moveTo(0+spwp,sphp+spx*i) ;
   c2.lineTo(c2width-spwp,spwp+spy*i)
   c2.stroke() ;
+  }
  }
-}
