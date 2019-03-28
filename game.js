@@ -19,10 +19,11 @@ c2height =canvas2.height;
 
 document.body.innerHTML = document.body.innerHTML +
 '<div id=menus style="width:' + c2width + 'px;height:' + (wtop - c2height - window.innerWidth*0.02) + 'px;top:' + (c2height + window.innerWidth*0.02) + 'px;overflow:auto;"></div>';
-menus.innerHTML = menuelement[1];
+menus.innerHTML = menuelement[0];
+
+setmasu();
 
 let target = document.getElementById('main');
-
 target.addEventListener('click', getPosition);
 function getPosition(e) {
 alert('x' + Math.floor(e.offsetX-(c1height-c1height*0.95)/2) + 'y' + Math.floor(e.offsetY-(c1width-c1width*0.95)/2))
@@ -32,7 +33,7 @@ session += 1;
 
 function setmasu(){
 //設定
-var mainpx = document.masutx.masu.value;
+var mainpx = 120;
 //図形描写
 var canvas = document.getElementById('main');
 var c1 = canvas.getContext('2d');
