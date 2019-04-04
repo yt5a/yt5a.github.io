@@ -74,6 +74,7 @@
 <script src="dot-painter.js"></script>
 <script>
 //startup
+  kari = '';
   savex =[];
   savey =[];
   savepx = "";
@@ -105,16 +106,24 @@
   pxx = 400;
   pxl = pxx/dot;
   pxc = pxl;
+  fivec = 5;
+  fiveco =['#c44','#0000ff']
 
   if (document.lc.linecheck.checked == true) {
   for (var i = 1; i < dot; i++) {
-  if (i==1) {
-  var  dotx = '<line x1="0"y1="' + pxl + '" x2=100% y2="' + pxl + '" stroke="#c44"/>';
-  var  doty = '<line x1="' + pxl + '"y1="0" x2="' + pxl + '" y2="100%" stroke="#c44"/>';
+  if (i==fivec) {fivec += 5;
+  kari = fiveco[1]
   }
   else {
-  var  dotx = dotx + '<line x1="0"y1="' + pxl + '" x2=100% y2="' + pxl + '" stroke="#c44"/>';
-  var  doty = doty + '<line x1="' + pxl + '"y1="0" x2="' + pxl + '" y2="100%" stroke="#c44"/>';
+  kari = fiveco[0]
+  }
+  if (i==1) {
+  var  dotx = '<line x1="0"y1="' + pxl + '" x2=100% y2="' + pxl + '" stroke="' + kari + '"/>';
+  var  doty = '<line x1="' + pxl + '"y1="0" x2="' + pxl + '" y2="100%" stroke="' + kari + '"/>';
+  }
+  else {
+  var  dotx = dotx + '<line x1="0"y1="' + pxl + '" x2=100% y2="' + pxl + '" stroke="' + kari + '"/>';
+  var  doty = doty + '<line x1="' + pxl + '"y1="0" x2="' + pxl + '" y2="100%" stroke="' + kari + '"/>';
   }
   pxl = pxl + pxc;
   }
@@ -170,6 +179,8 @@
 
 
 
+
+　//戻るデータを書き込む
   function re(){
   if (!savex.length==0) {
   if (savex.length==1) {
@@ -193,7 +204,7 @@
   console.log(resavex)
  }
 }
-
+　//戻るデータを起こす
   function rere(){
   if (!resavex.length==0) {
   if (resavex.length==1) {
