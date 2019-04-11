@@ -4,13 +4,14 @@ function onButtonClick() {
   //リセット
   document.getElementById("table").innerHTML = '';
 
-  //テーブル1生成
-  var moji= document.createElement('div');
-  moji.setAttribute('id','one');
-  table.insertBefore(moji, null);
-  target = document.getElementById("one");
-  var tx0 = document.forms.id_form1.tx.value.replace(/\s+/g, "");
 
+  //1単語
+  //テーブル1-1生成
+  var moji= document.createElement('div');
+  moji.setAttribute('id','one1');
+  table.insertBefore(moji, null);
+  target = document.getElementById("one1");
+  var tx0 = document.forms.id_form1.tx.value.replace(/\s+/g, "");
   var check = [];
   var dateb = [];
   var counts = {};
@@ -39,7 +40,7 @@ function onButtonClick() {
 if (word==undefined) {
 word = "";
 }
-  document.getElementById("one").innerHTML ='<style>#one{width:200px;height:110px;overflow:auto;}</style>' + word;
+  document.getElementById("one1").innerHTML ='<style>#one1{width:200px;height:110px;overflow:auto;}</style>' + word;
 
   //文字数
   var moji= document.createElement('span');
@@ -53,10 +54,10 @@ word = "";
 
 
 
-  //テーブル2生成
+  //テーブル1-2生成
   var moji= document.createElement('div');
-  moji.setAttribute('id','two');
-  moji.innerHTML ='<style>#two{width:200px;height:110px;overflow:auto;}</style>';
+  moji.setAttribute('id','one2');
+  moji.innerHTML ='<style>#one2{width:200px;height:110px;overflow:auto;}</style>';
   table.insertBefore(moji, null);
   //各文字数
   ii = 0;
@@ -66,7 +67,7 @@ word = "";
   var lenlan= document.createElement('span');
   lenlan.setAttribute('id','lenlan' + ii);
   lenlan.innerHTML = ("[" + "<span id='1moji" + ii + "'>" + dateb[i-1] + "</span>" + "]" + "<span id='1mojisu" + ii + "'>" +counts[dateb[i-1]] + "</span>" + "<br>");
-  two.insertBefore(lenlan, null);
+  one2.insertBefore(lenlan, null);
   }
   var set = dateb[i-1];
   for (var f = 0; f < dateb.length+1; f++) {
@@ -89,10 +90,10 @@ word = "";
 
 
 
-  //テーブル3生成
+  //テーブル1-3生成
   var moji= document.createElement('div');
-  moji.setAttribute('id','three');
-  moji.innerHTML ='<style>#three{width:200px;height:110px;overflow:auto;}</style>';
+  moji.setAttribute('id','one3');
+  moji.innerHTML ='<style>#one3{width:200px;height:110px;overflow:auto;}</style>';
   table.insertBefore(moji, null);
 
 
@@ -141,13 +142,13 @@ do {
   var top1= document.createElement('span');
   top1.setAttribute('id','1top' + ii);
   top1.innerHTML = "[" + "<span>" + onemoji[i] + "</span>" + "]";
-  three.insertBefore(top1, null);
+  one3.insertBefore(top1, null);
 
   var topsu1= document.createElement('span');
   topsu1.setAttribute('id','1topsu' + ii);
   topsu1.innerHTML ="<span>" + onemojisu[i] + "</span>";
-  three.insertBefore(topsu1, null);
-  three.insertBefore(document.createElement('br'), null);
+  one3.insertBefore(topsu1, null);
+  one3.insertBefore(document.createElement('br'), null);
   }
   var moji= document.createElement('span');
   moji.innerHTML = 'top順';
@@ -156,10 +157,14 @@ do {
   table.insertBefore(document.createElement('hr'), null);
 
 
-  //テーブル4生成
+
+
+
+  //2単語
+  //テーブル2-1生成
   var moji= document.createElement('div');
-  moji.setAttribute('id','four');
-  moji.innerHTML ='<style>#four{width:200px;height:110px;overflow:auto;}</style>';
+  moji.setAttribute('id','two1');
+  moji.innerHTML ='<style>#two1{width:200px;height:110px;overflow:auto;}</style>';
   table.insertBefore(moji, null);
 
 
@@ -189,7 +194,7 @@ var ii = ii+1;
 var lenlan= document.createElement('span');
 lenlan.setAttribute('id','2lenlan' + ii);
 lenlan.innerHTML = ("[" + "<span id='2moji" + ii + "'>" + dateb[i-1] + "</span>" + "]" + "<span id='2mojisu" + ii + "'>" +counts[dateb[i-1]] + "</span>" + "<br>");
-four.insertBefore(lenlan, null);
+two1.insertBefore(lenlan, null);
 }
 var set = dateb[i-1];
 for (var f = 0; f < dateb.length+1; f++) {
@@ -219,10 +224,10 @@ table.insertBefore(moji, null);
 table.insertBefore(document.createElement('hr'), null);
 
 
-//テーブル5生成
+//テーブル2-2生成
 var moji = document.createElement('div');
-moji.setAttribute('id','five');
-moji.innerHTML ='<style>#five{width:200px;height:110px;overflow:auto;}</style>';
+moji.setAttribute('id','two2');
+moji.innerHTML ='<style>#two2{width:200px;height:110px;overflow:auto;}</style>';
 table.insertBefore(moji, null);
 
 //取得準備
@@ -271,13 +276,13 @@ var ii = i+1;
 var top2= document.createElement('span');
 top2.setAttribute('id','2top' + ii);
 top2.innerHTML = "[" + "<span>" + twomoji[i] + "</span>" + "]";
-five.insertBefore(top2, null);
+two2.insertBefore(top2, null);
 
 var topsu2= document.createElement('span');
 topsu2.setAttribute('id','2topsu' + ii);
 topsu2.innerHTML ="<span>" + twomojisu[i] + "</span>";
-five.insertBefore(topsu2, null);
-five.insertBefore(document.createElement('br'), null);
+two2.insertBefore(topsu2, null);
+two2.insertBefore(document.createElement('br'), null);
 
 }
 
@@ -290,11 +295,10 @@ table.insertBefore(document.createElement('hr'), null);
 
 
 
-
-//テーブル6生成
+//テーブル3-1生成
 var moji= document.createElement('div');
-moji.setAttribute('id','six');
-moji.innerHTML ='<style>#six{width:200px;height:110px;overflow:auto;}</style>';
+moji.setAttribute('id','three1');
+moji.innerHTML ='<style>#three1{width:200px;height:110px;overflow:auto;}</style>';
 table.insertBefore(moji, null);
 
 
@@ -324,7 +328,7 @@ var ii = ii+1;
 var lenlan= document.createElement('span');
 lenlan.setAttribute('id','3lenlan' + ii);
 lenlan.innerHTML = ("[" + "<span id='3moji" + ii + "'>" + dateb[i-1] + "</span>" + "]" + "<span id='3mojisu" + ii + "'>" +counts[dateb[i-1]] + "</span>" + "<br>");
-six.insertBefore(lenlan, null);
+three1.insertBefore(lenlan, null);
 }
 var set = dateb[i-1];
 for (var f = 0; f < dateb.length+1; f++) {
@@ -353,10 +357,13 @@ moji.innerHTML = ii;
 table.insertBefore(moji, null);
 table.insertBefore(document.createElement('hr'), null);
 
+
+
+
 //テーブル7生成
 var moji = document.createElement('div');
-moji.setAttribute('id','seven');
-moji.innerHTML ='<style>#seven{width:200px;height:110px;overflow:auto;}</style>';
+moji.setAttribute('id','three2');
+moji.innerHTML ='<style>#three2{width:200px;height:110px;overflow:auto;}</style>';
 table.insertBefore(moji, null);
 
 //取得準備
@@ -408,13 +415,13 @@ var ii = i+1;
 var top3= document.createElement('span');
 top3.setAttribute('id','3top' + ii);
 top3.innerHTML = "[" + "<span>" + threemoji[i] + "</span>" + "]";
-seven.insertBefore(top3, null);
+three2.insertBefore(top3, null);
 
 var topsu3= document.createElement('span');
 topsu3.setAttribute('id','3topsu' + ii);
 topsu3.innerHTML ="<span>" + threemojisu[i] + "</span>";
-seven.insertBefore(topsu3, null);
-seven.insertBefore(document.createElement('br'), null);
+three2.insertBefore(topsu3, null);
+three2.insertBefore(document.createElement('br'), null);
 
 }
 
@@ -424,10 +431,13 @@ table.insertBefore(moji, null);
 table.insertBefore(document.createElement('hr'), null);
 table.insertBefore(document.createElement('hr'), null);
 
-//テーブル8生成
+
+
+
+//テーブル4-1生成
 var moji= document.createElement('div');
-moji.setAttribute('id','eight');
-moji.innerHTML ='<style>#eight{width:200px;height:110px;overflow:auto;}</style>';
+moji.setAttribute('id','four1');
+moji.innerHTML ='<style>#four1{width:200px;height:110px;overflow:auto;}</style>';
 table.insertBefore(moji, null);
 
 
@@ -457,7 +467,7 @@ var ii = ii+1;
 var lenlan= document.createElement('span');
 lenlan.setAttribute('id','4lenlan' + ii);
 lenlan.innerHTML = ("[" + "<span id='4moji" + ii + "'>" + dateb[i-1] + "</span>" + "]" + "<span id='4mojisu" + ii + "'>" +counts[dateb[i-1]] + "</span>" + "<br>");
-eight.insertBefore(lenlan, null);
+four1.insertBefore(lenlan, null);
 }
 var set = dateb[i-1];
 for (var f = 0; f < dateb.length+1; f++) {
@@ -488,8 +498,8 @@ table.insertBefore(document.createElement('hr'), null);
 
 //テーブル9生成
 var moji = document.createElement('div');
-moji.setAttribute('id','nine');
-moji.innerHTML ='<style>#nine{width:200px;height:110px;overflow:auto;}</style>';
+moji.setAttribute('id','four2');
+moji.innerHTML ='<style>#four2{width:200px;height:110px;overflow:auto;}</style>';
 table.insertBefore(moji, null);
 
 //取得準備
@@ -541,13 +551,13 @@ var ii = i+1;
 var top4= document.createElement('span');
 top4.setAttribute('id','4top' + ii);
 top4.innerHTML = "[" + "<span>" + fourmoji[i] + "</span>" + "]";
-nine.insertBefore(top4, null);
+four2.insertBefore(top4, null);
 
 var topsu4= document.createElement('span');
 topsu4.setAttribute('id','4topsu' + ii);
 topsu4.innerHTML ="<span>" + fourmojisu[i] + "</span>";
-nine.insertBefore(topsu4, null);
-nine.insertBefore(document.createElement('br'), null);
+four2.insertBefore(topsu4, null);
+four2.insertBefore(document.createElement('br'), null);
 
 　}
 
