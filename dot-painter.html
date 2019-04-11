@@ -101,6 +101,8 @@
  }
 }
 
+
+
   function draw() {
   dot = document.tx.dottx.value;
   pxx = 400;
@@ -117,6 +119,8 @@
   else {
   kari = fiveco[0]
   }
+
+  
   if (i==1) {
   var  dotx = '<line x1="0"y1="' + pxl + '" x2=100% y2="' + pxl + '" stroke="' + kari + '"/>';
   var  doty = '<line x1="' + pxl + '"y1="0" x2="' + pxl + '" y2="100%" stroke="' + kari + '"/>';
@@ -180,7 +184,7 @@
 
 
 
-　//戻るデータを書き込む
+　//戻したデータを書き込む
   function re(){
   if (!savex.length==0) {
   if (savex.length==1) {
@@ -204,7 +208,7 @@
   console.log(resavex)
  }
 }
-　//戻るデータを起こす
+　//戻したデータを読み込む
   function rere(){
   if (!resavex.length==0) {
   if (resavex.length==1) {
